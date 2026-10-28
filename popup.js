@@ -12,7 +12,7 @@ document.querySelector("#start").addEventListener("click", async () => {
   }
 
   try {
-    const result = await chrome.tabs.sendMesage(tab.id, {
+    const result = await chrome.tabs.sendMessage(tab.id, {
       type: "IDENTIFY_PENDENCES",
     })
 
@@ -21,5 +21,7 @@ document.querySelector("#start").addEventListener("click", async () => {
   } catch (err) {
     status.textContent =
       "Não foi possível acessar esta página. Verifique se ela é do V8."
+    console.error(err);
+    
   }
 })

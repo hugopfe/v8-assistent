@@ -8,7 +8,7 @@ chrome.runtime.onMessage.addListener((message, sender, respond) => {
   const pending = rows.filter((row) => {
     const text = row.innerText.replace(/\s+/g, " ").trim()
 
-    return text.includes("Aguardando Consentimento")
+    return text.includes("Aguardando consentimento")
   })
 
   respond({quantity: pending.length})
